@@ -116,13 +116,13 @@ class Validator:
             return Validator.validate_boundaries(float(availability), 0, 72)
         return False
 
-    @staticmethod
-    def validate_position(position):
-        try:
-            user_position = FREELANCER.Position[position]
-        except Exception as exc:
-            return False
-        return True
+    # @staticmethod
+    # def validate_position(position):
+    #     try:
+    #         user_position = FREELANCER.Position[position]
+    #     except Exception as exc:
+    #         return False
+    #     return True
 
     @staticmethod
     @validate_input("Enter your ID: ", validate_ID)
@@ -131,9 +131,9 @@ class Validator:
 
     @staticmethod
     def validate_name(name):
-        if Validator.validate_string_with_letters_only(name):
-            return Validator.validate_capitalized(name)
-        return False
+        # if Validator.validate_string_with_letters_only(name):
+            # return Validator.validate_capitalized(name)
+        return name
 
     @staticmethod
     @validate_input("Enter your name: ", validate_name)
@@ -160,10 +160,10 @@ class Validator:
     def get_salary(salary_string):
         return float(salary_string)
 
-    @staticmethod
-    @validate_input("Enter your position: ", validate_position)
-    def get_position(position_string):
-        return position_string
+    # @staticmethod
+    # @validate_input("Enter your position: ", validate_position)
+    # def get_position(position_string):
+    #     return position_string
 
     @staticmethod
     def validate_file_name(file_name):
